@@ -1,0 +1,11 @@
+flowchart TB
+    U[User] --> R[React Dashboard]
+    R -->|REST / JSON| D[Django + Django REST Framework]
+    D --> C[Core API: Notes and Proposals]
+    C --> ORM[Django ORM]
+    ORM --> DB[(Neon PostgreSQL)]
+    ORM -. local development .-> SQ[(SQLite)]
+    D --> SAFE[Permission Gate - future]
+    SAFE -. future only .-> AI[AI / Voice / Desktop Integrations]
+    SAFE --> AUDIT[Proposal / Approval State]
+    NOTE[Current starter: approvals never execute actions] --- AUDIT
